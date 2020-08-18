@@ -1,0 +1,67 @@
+
+****************** Save Data **********************************************
+
+Saving String value:
+addStringValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.setString('keyValue', "abc");
+}
+Saving int value:
+addIntegerValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.setInt('keyValue', "abc");
+}
+Saving double value:
+addDoubleValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.setDouble('keyValue', "abc");
+}
+Saving bool value:
+addBooleanValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.setBool('keyValue', "abc");
+}
+
+*********************** Read Data *******************************************
+
+getStringValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   //Returns String
+   String stringValue = prefs.getString('stringValue');
+}
+getBoolValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   //Returns bool
+   bool boolValue = prefs.getBool('boolValue');
+}
+getIntValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   //Returns int
+   int intValue = prefs.getInt('intValue');
+}
+getDoubleValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   //Returns double
+   double doubleValue = prefs.getDouble('doubleValue');
+}
+
+***************************** Remove Data ********************************
+
+removeData() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.remove("stringValue");
+   prefs.remove("boolValue");
+   prefs.remove("intValue");
+   prefs.remove("doubleValue");
+}
+
+**************************** Check Key *************************************
+
+checkifkeyExists() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   bool CheckValue = prefs.containsKey('value');
+}
+
+************************* Update Data ***************************************
+
+Just re-assign the value, key.

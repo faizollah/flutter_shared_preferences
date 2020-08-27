@@ -22,6 +22,12 @@ addBooleanValue() async {
    prefs.setBool('keyValue', "abc");
 }
 
+Saving list:
+addListValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   prefs.setStringList("key", list);
+}
+
 *********************** Read Data *******************************************
 
 getStringValue() async {
@@ -45,6 +51,12 @@ getDoubleValue() async {
    double doubleValue = prefs.getDouble('doubleValue');
 }
 
+getListValue() async {
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   //Returns List
+   List<String> listValues = prefs.getStringList("key");
+}
+
 ***************************** Remove Data ********************************
 
 removeData() async {
@@ -53,6 +65,7 @@ removeData() async {
    prefs.remove("boolValue");
    prefs.remove("intValue");
    prefs.remove("doubleValue");
+   prefs.remove("listValue");
 }
 
 **************************** Check Key *************************************
